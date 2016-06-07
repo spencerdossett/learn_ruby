@@ -18,6 +18,7 @@ def start_of_word(text, chars = 1)
 end
 
 def titleize(text)
+  ignore_list = ['and', 'the', 'over']
   text.capitalize
 end
 
