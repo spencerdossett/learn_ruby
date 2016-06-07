@@ -14,11 +14,7 @@ def repeat(text, repeats = 2)
 end
 
 def start_of_word(text, chars = 1)
-  if chars == 1
-    text[0]
-  else
-    text[0, chars - 1]
-  end
+  text[0, chars]
 end
 
 def titleize(text)
