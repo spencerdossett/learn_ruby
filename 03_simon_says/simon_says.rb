@@ -7,8 +7,8 @@ def shout(text)
 end
 
 def repeat(text, repeats = 2)
-  response = ""
-  repeats.times do
+  response = text
+  (repeats - 1).times do
     response = response + " #{text}"
   end
   response
@@ -20,7 +20,10 @@ end
 
 def titleize(text)
   ignore_list = ['and', 'the', 'over']
-  text.capitalize
+  temp_array = text.split(' ').map do |word|
+    word.capitalize unless ignore_list.include? word
+  end
+  temp_array.join(' ')
 end
 
 def first_word(text)
