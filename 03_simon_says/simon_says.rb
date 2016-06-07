@@ -20,6 +20,7 @@ end
 
 def titleize(text)
   ignore_list = ['and', 'the', 'over']
+  text.capitalize!
   temp_array = text.split(' ').map do |word|
     if ignore_list.include? word
       word
