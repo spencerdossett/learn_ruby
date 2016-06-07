@@ -11,6 +11,7 @@ def repeat(text, repeats = 2)
   repeats.times do
     response = response + " #{text}"
   end
+  response
 end
 
 def start_of_word(text, chars = 1)
