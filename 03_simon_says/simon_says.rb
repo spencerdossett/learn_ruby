@@ -24,3 +24,7 @@ end
 def titleize(text)
   text.capitalize
 end
+
+def first_word(text)
+  text.split(' ')[0]
+end
