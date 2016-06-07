@@ -14,5 +14,9 @@ def repeat(text, repeats = 2)
 end
 
 def start_of_word(text, chars = 1)
-  response = text[0, chars-1]
+  text[0, chars - 1]
+end
+
+def titleize(text)
+  text.capitalize
 end
