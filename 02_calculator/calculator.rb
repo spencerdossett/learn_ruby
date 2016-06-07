@@ -9,3 +9,7 @@ def sum(numbers)
   end
   sum
 end
+
+def subtract(num1, num2)
+  num1 - num2
+end
