@@ -4,11 +4,11 @@ class Temperature
   end
 
   def self.in_celsius(celsius)
-    @celsius = celsius
+    Celsius.new(celsius)
   end
 
   def self.in_fahrenheit(fahrenheit)
-    @fahrenheit = fahrenheit
+    Fahrenheit.new(fahrenheit)
   end
 
   def set_temperatures(temperature)
