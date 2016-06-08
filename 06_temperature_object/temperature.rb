@@ -1,12 +1,59 @@
 class Temperature
-  def initialize(temperature = [])
-
+  def initialize(temperature = {})
+    set_temperatures(temperature)
   end
+
+  def self.in_celsius(celsius)
+    @celsius = celsius
+  end
+
+  def self.in_fahrenheit(fahrenheit)
+    @fahrenheit = fahrenheit
+  end
+
+  def set_temperatures(temperature)
+    temperature.each do |key, value|
+      if key == :f
+        @fahrenheit = value
+      elsif key == :c
+        @celsius = value
+      end
+    end
+  end
+
   def to_celsius
-    c_temp = (f_temp - 32) * 5.0/9.0
+    if @celsius
+      @celsius
+    else
+      @celsius = (@fahrenheit - 32) * 5.0/9.0
+    end
   end
 
-  def ctof(c_temp)
-    f_temp = (c_temp * (9.0/5.0)) + 32
+  def to_fahrenheit
+    if @fahrenheit
+      @fahrenheit
+    else
+      @fahrenheit = (@celsius * (9.0/5.0)) + 32
+    end
   end
+end
+
+class Celsius < Temperature
+  def initialize(celsius)
+    @celsius = celsius
+  end
+
+  def to_celsius
+    @celsius
+  end
+end
+
+class Fahrenheit < Temperature
+  def initialize(fahrenheit)
+    @fahrenheit = fahrenheit
+  end
+  def to_fahrenheit
+    @fahrenheit
+  end
+
 end
